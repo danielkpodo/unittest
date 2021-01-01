@@ -23,6 +23,10 @@ class TestCalc(unittest.TestCase):
         self.assertEqual(calc.divide(100, 2), 50)
         self.assertEqual(calc.divide(10, 10), 1)
 
+        # testing exceptions
+        with self.assertRaises(ValueError):
+            calc.divide(10, 2)
+
 
 # helps  us run our test_case.py file via the unittest module
 unittest.main()
