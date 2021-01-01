@@ -12,7 +12,7 @@ class Employee():
 
     @property
     def fullname(self):
-        return f"{self.firstname}{self.lastname}"
+        return f"{self.firstname} {self.lastname}"
 
     @property
     def apply_raise(self):
