@@ -3,26 +3,24 @@ from employees import Employee
 
 
 class TestEmployee(unittest.TestCase):
+    def setUp(self):
+        self.emp_1 = Employee("narh", "kpodo", 80)
+        self.emp_2 = Employee("nelson", "mandela", 800)
+
+    def tearDown(self):
+        pass
 
     def test_email(self):
-        emp_1 = Employee("narh", "kpodo", 80)
-        emp_2 = Employee("nelson", "mandela", 800)
-        self.assertEqual(emp_1.email, "narhkpodo@gmail.com")
-        self.assertEqual(emp_2.email, "nelsonmandela@gmail.com")
+        self.assertEqual(self.emp_1.email, "narhkpodo@gmail.com")
+        self.assertEqual(self.emp_2.email, "nelsonmandela@gmail.com")
 
     def test_fullname(self):
-        emp_1 = Employee("narh", "kpodo", 320)
-        emp_2 = Employee("nelson", "mandela", 90)
-
-        self.assertEqual(emp_1.fullname, "narh kpodo")
-        self.assertEqual(emp_2.fullname, "nelson mandela")
+        self.assertEqual(self.emp_1.fullname, "narh kpodo")
+        self.assertEqual(self.emp_2.fullname, "nelson mandela")
 
     def test_raise(self):
-        emp_1 = Employee("narh", "kpodo", 320)
-        emp_2 = Employee("nelson", "mandela", 90)
-
-        self.assertEqual(emp_1.apply_raise, 640)
-        self.assertEqual(emp_2.apply_raise, 180)
+        self.assertEqual(self.emp_1.apply_raise, 160)
+        self.assertEqual(self.emp_2.apply_raise, 1600)
 
 
 unittest.main()
