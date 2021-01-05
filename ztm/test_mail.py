@@ -4,10 +4,14 @@ import mail_checker
 
 class TestEmail(unittest.TestCase):
     def test_email(self):
-        username = 'narh'
-        age = 23
-        result = mail_checker.get_user_email(username, age)
-        self.assertEqual(result, 'narh.23@gmail.com')
+        username1 = 'narh'
+        age1 = 23
+        username2 = 'naphtha'
+        age2 = 26
+        result1 = mail_checker.get_user_email(username1, age1)
+        result2 = mail_checker.get_user_email(username2, age2)
+        self.assertEqual(result1, 'narh.23@gmail.com')
+        self.assertEqual(result2, 'naphtha.26@gmail.com')
 
 
 if __name__ == "__main__":
